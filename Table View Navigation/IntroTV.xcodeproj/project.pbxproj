@@ -21,7 +21,11 @@
 		5B8F97F4254B1584007DED64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F97F3254B1584007DED64 /* Assets.xcassets */; };
 		5B8F97F7254B1584007DED64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F97F5254B1584007DED64 /* LaunchScreen.storyboard */; };
 		5B8F9804254B18EB007DED64 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */; };
+		5BAD1A222577D7A100DF01A7 /* CellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD1A202577D7A100DF01A7 /* CellVC.swift */; };
+		5BAD1A232577D7A100DF01A7 /* CellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD1A212577D7A100DF01A7 /* CellVC.xib */; };
+		5BAD1A262577E0F600DF01A7 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD1A252577E0F600DF01A7 /* Endpoints.swift */; };
 		5BFDEFB125779EB200040C26 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */; };
+		96277FC77C57527530B4AC03 /* Pods_IntroTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01DE08319DCAEAAF42269F5 /* Pods_IntroTV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +45,13 @@
 		5B8F97F6254B1584007DED64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B8F97F8254B1584007DED64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		5BAD1A202577D7A100DF01A7 /* CellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVC.swift; sourceTree = "<group>"; };
+		5BAD1A212577D7A100DF01A7 /* CellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellVC.xib; sourceTree = "<group>"; };
+		5BAD1A252577E0F600DF01A7 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		B01DE08319DCAEAAF42269F5 /* Pods_IntroTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntroTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B938C365FE92EDCD1C2BDB72 /* Pods-IntroTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntroTV.debug.xcconfig"; path = "Target Support Files/Pods-IntroTV/Pods-IntroTV.debug.xcconfig"; sourceTree = "<group>"; };
+		EF3B18AA25B162DC043F5507 /* Pods-IntroTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntroTV.release.xcconfig"; path = "Target Support Files/Pods-IntroTV/Pods-IntroTV.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96277FC77C57527530B4AC03 /* Pods_IntroTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +81,7 @@
 				5B3DA35F257547DF002BE9EE /* Profile.swift */,
 				5B1D46A725763CEA004F8C65 /* ProfileEditionViewModel.swift */,
 				5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */,
+				5BAD1A252577E0F600DF01A7 /* Endpoints.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -79,6 +91,8 @@
 			children = (
 				5B8F97EE254B1581007DED64 /* DetailVC.swift */,
 				5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */,
+				5BAD1A202577D7A100DF01A7 /* CellVC.swift */,
+				5BAD1A212577D7A100DF01A7 /* CellVC.xib */,
 				5B3DA35825751A01002BE9EE /* NewProfileVC.swift */,
 				5B3DA35C257524C3002BE9EE /* EditorVC.swift */,
 				5B1D46AA25766BC6004F8C65 /* AvatarSelection.swift */,
@@ -110,6 +124,8 @@
 			children = (
 				5B8F97E9254B1581007DED64 /* IntroTV */,
 				5B8F97E8254B1581007DED64 /* Products */,
+				9DE4848867C661FD4F8FE08E /* Pods */,
+				EDD1EB49624899CC5FB3BBB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +150,24 @@
 			path = IntroTV;
 			sourceTree = "<group>";
 		};
+		9DE4848867C661FD4F8FE08E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B938C365FE92EDCD1C2BDB72 /* Pods-IntroTV.debug.xcconfig */,
+				EF3B18AA25B162DC043F5507 /* Pods-IntroTV.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EDD1EB49624899CC5FB3BBB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B01DE08319DCAEAAF42269F5 /* Pods_IntroTV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B8F97FB254B1584007DED64 /* Build configuration list for PBXNativeTarget "IntroTV" */;
 			buildPhases = (
+				E3F37F3786AC7546E788C3CE /* [CP] Check Pods Manifest.lock */,
 				5B8F97E3254B1581007DED64 /* Sources */,
 				5B8F97E4254B1581007DED64 /* Frameworks */,
 				5B8F97E5254B1581007DED64 /* Resources */,
+				0524163B10011CDD01CBAEDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAD1A232577D7A100DF01A7 /* CellVC.xib in Resources */,
 				5B8F97F7254B1584007DED64 /* LaunchScreen.storyboard in Resources */,
 				5B8F97F4254B1584007DED64 /* Assets.xcassets in Resources */,
 				5B8F97F2254B1581007DED64 /* Main.storyboard in Resources */,
@@ -198,6 +235,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0524163B10011CDD01CBAEDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntroTV/Pods-IntroTV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IntroTV/Pods-IntroTV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IntroTV/Pods-IntroTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3F37F3786AC7546E788C3CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IntroTV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B8F97E3254B1581007DED64 /* Sources */ = {
@@ -207,12 +286,14 @@
 				5B437AF925506B1C000E4C34 /* Item.swift in Sources */,
 				5B8F97EF254B1581007DED64 /* DetailVC.swift in Sources */,
 				5B8F9804254B18EB007DED64 /* MovieTableViewController.swift in Sources */,
+				5BAD1A222577D7A100DF01A7 /* CellVC.swift in Sources */,
 				5B1D46AE2576911E004F8C65 /* ProfileManager.swift in Sources */,
 				5B1D46A825763CEA004F8C65 /* ProfileEditionViewModel.swift in Sources */,
 				5B3DA35925751A01002BE9EE /* NewProfileVC.swift in Sources */,
 				5B8F97EB254B1581007DED64 /* AppDelegate.swift in Sources */,
 				5BFDEFB125779EB200040C26 /* MoviesViewModel.swift in Sources */,
 				5B3DA360257547DF002BE9EE /* Profile.swift in Sources */,
+				5BAD1A262577E0F600DF01A7 /* Endpoints.swift in Sources */,
 				5B1D46AB25766BC6004F8C65 /* AvatarSelection.swift in Sources */,
 				5B8F97ED254B1581007DED64 /* SceneDelegate.swift in Sources */,
 				5B3DA35D257524C3002BE9EE /* EditorVC.swift in Sources */,
@@ -359,6 +440,7 @@
 		};
 		5B8F97FC254B1584007DED64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B938C365FE92EDCD1C2BDB72 /* Pods-IntroTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,6 +460,7 @@
 		};
 		5B8F97FD254B1584007DED64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF3B18AA25B162DC043F5507 /* Pods-IntroTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
