@@ -5,7 +5,6 @@
 //  Created by Martín on 02/12/2020.
 //
 
-import Foundation
 import UIKit
 
 class CellVC: UITableViewCell {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		5B3DA35925751A01002BE9EE /* NewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA35825751A01002BE9EE /* NewProfileVC.swift */; };
 		5B3DA35D257524C3002BE9EE /* EditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA35C257524C3002BE9EE /* EditorVC.swift */; };
 		5B3DA360257547DF002BE9EE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA35F257547DF002BE9EE /* Profile.swift */; };
+		5B43777F257845BD009CBCF8 /* CellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43777D257845BD009CBCF8 /* CellVC.swift */; };
+		5B437780257845BD009CBCF8 /* CellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43777E257845BD009CBCF8 /* CellVC.xib */; };
 		5B437AF925506B1C000E4C34 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B437AF825506B1C000E4C34 /* Item.swift */; };
 		5B8F97EB254B1581007DED64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EA254B1581007DED64 /* AppDelegate.swift */; };
 		5B8F97ED254B1581007DED64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EC254B1581007DED64 /* SceneDelegate.swift */; };
@@ -21,8 +23,6 @@
 		5B8F97F4254B1584007DED64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F97F3254B1584007DED64 /* Assets.xcassets */; };
 		5B8F97F7254B1584007DED64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F97F5254B1584007DED64 /* LaunchScreen.storyboard */; };
 		5B8F9804254B18EB007DED64 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */; };
-		5BAD1A222577D7A100DF01A7 /* CellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD1A202577D7A100DF01A7 /* CellVC.swift */; };
-		5BAD1A232577D7A100DF01A7 /* CellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD1A212577D7A100DF01A7 /* CellVC.xib */; };
 		5BAD1A262577E0F600DF01A7 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD1A252577E0F600DF01A7 /* Endpoints.swift */; };
 		5BFDEFB125779EB200040C26 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */; };
 		96277FC77C57527530B4AC03 /* Pods_IntroTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01DE08319DCAEAAF42269F5 /* Pods_IntroTV.framework */; };
@@ -35,6 +35,8 @@
 		5B3DA35825751A01002BE9EE /* NewProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileVC.swift; sourceTree = "<group>"; };
 		5B3DA35C257524C3002BE9EE /* EditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorVC.swift; sourceTree = "<group>"; };
 		5B3DA35F257547DF002BE9EE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		5B43777D257845BD009CBCF8 /* CellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVC.swift; sourceTree = "<group>"; };
+		5B43777E257845BD009CBCF8 /* CellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellVC.xib; sourceTree = "<group>"; };
 		5B437AF825506B1C000E4C34 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5B8F97E7254B1581007DED64 /* IntroTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8F97EA254B1581007DED64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +47,6 @@
 		5B8F97F6254B1584007DED64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B8F97F8254B1584007DED64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
-		5BAD1A202577D7A100DF01A7 /* CellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVC.swift; sourceTree = "<group>"; };
-		5BAD1A212577D7A100DF01A7 /* CellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellVC.xib; sourceTree = "<group>"; };
 		5BAD1A252577E0F600DF01A7 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		B01DE08319DCAEAAF42269F5 /* Pods_IntroTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntroTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,8 +91,8 @@
 			children = (
 				5B8F97EE254B1581007DED64 /* DetailVC.swift */,
 				5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */,
-				5BAD1A202577D7A100DF01A7 /* CellVC.swift */,
-				5BAD1A212577D7A100DF01A7 /* CellVC.xib */,
+				5B43777D257845BD009CBCF8 /* CellVC.swift */,
+				5B43777E257845BD009CBCF8 /* CellVC.xib */,
 				5B3DA35825751A01002BE9EE /* NewProfileVC.swift */,
 				5B3DA35C257524C3002BE9EE /* EditorVC.swift */,
 				5B1D46AA25766BC6004F8C65 /* AvatarSelection.swift */,
@@ -156,7 +156,6 @@
 				B938C365FE92EDCD1C2BDB72 /* Pods-IntroTV.debug.xcconfig */,
 				EF3B18AA25B162DC043F5507 /* Pods-IntroTV.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,7 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BAD1A232577D7A100DF01A7 /* CellVC.xib in Resources */,
+				5B437780257845BD009CBCF8 /* CellVC.xib in Resources */,
 				5B8F97F7254B1584007DED64 /* LaunchScreen.storyboard in Resources */,
 				5B8F97F4254B1584007DED64 /* Assets.xcassets in Resources */,
 				5B8F97F2254B1581007DED64 /* Main.storyboard in Resources */,
@@ -286,8 +285,8 @@
 				5B437AF925506B1C000E4C34 /* Item.swift in Sources */,
 				5B8F97EF254B1581007DED64 /* DetailVC.swift in Sources */,
 				5B8F9804254B18EB007DED64 /* MovieTableViewController.swift in Sources */,
-				5BAD1A222577D7A100DF01A7 /* CellVC.swift in Sources */,
 				5B1D46AE2576911E004F8C65 /* ProfileManager.swift in Sources */,
+				5B43777F257845BD009CBCF8 /* CellVC.swift in Sources */,
 				5B1D46A825763CEA004F8C65 /* ProfileEditionViewModel.swift in Sources */,
 				5B3DA35925751A01002BE9EE /* NewProfileVC.swift in Sources */,
 				5B8F97EB254B1581007DED64 /* AppDelegate.swift in Sources */,

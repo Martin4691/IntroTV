@@ -14,8 +14,11 @@ class MovieTableViewController: UITableViewController {
     
     
     override func viewDidLoad() {
+        
+        let nib = UINib(nibName: "CellVC", bundle: nil)
+        // nib es igual que xib, pero con una nomenclatura antigua.
+        self.tableView.register(nib, forCellReuseIdentifier: "standardCell")
         super.viewDidLoad()
-
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,13 +55,11 @@ class MovieTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
     
     /*
@@ -71,14 +72,15 @@ class MovieTableViewController: UITableViewController {
      }
      */
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reusable_cell", for: indexPath)
-//        cell.textLabel?.text = items[indexPath.row].name
-//
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "standardCell", for: indexPath)
+
+        return cell
+    }
     
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+    }
     
     
     /*
