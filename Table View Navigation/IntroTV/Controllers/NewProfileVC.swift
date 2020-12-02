@@ -57,29 +57,61 @@ class NewProfileVC: UIViewController {
                 label3Out.text = name
             }
         }
- 
+  
         
     }
     
     
     
     @IBAction func profile0Act(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
+        
+        if storedProfile.count > 0 {
+        dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = storedProfile[0]
+            ProfileEditionViewModel.name = storedProfile[0]
+        } else {
+            self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        }
 
     }
     
     @IBAction func profile1Act(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
+        
+        if storedProfile.count > 1 {
+        dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = storedProfile[1]
+            ProfileEditionViewModel.name = storedProfile[1]
+        } else {
+            self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        }
         
     }
     
     @IBAction func profile2Act(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
+        
+        if storedProfile.count > 2 {
+        dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = storedProfile[2]
+            ProfileEditionViewModel.name = storedProfile[2]
+        } else {
+            self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        }
        
     }
     
     @IBAction func profile3Act(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
+        
+        if storedProfile.count > 3 {
+        dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = storedProfile[3]
+            ProfileEditionViewModel.name = storedProfile[3]
+        } else {
+            self.performSegue(withIdentifier: "segueToEdit", sender: self)
+        }
         
     }
     

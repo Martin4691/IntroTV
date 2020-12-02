@@ -57,8 +57,10 @@ class EditorVC: UIViewController {
         
     }
     
+    
+    
     @IBAction func removeButtonAct(_ sender: Any) {
-        
+//        UserDefaults.standard.removeObject(forKey: ProfileEditionViewModel.name!)
     }
     
     

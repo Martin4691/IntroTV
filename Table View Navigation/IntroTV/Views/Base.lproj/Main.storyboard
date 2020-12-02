@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="un9-es-oBY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4cd-iL-U9p">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -11,29 +11,28 @@
         <!--Mis items-->
         <scene sceneID="TVm-00-4KY">
             <objects>
-                <tableViewController title="Mis items" id="XHs-oo-rsc" customClass="TableVC" customModule="IntroTV" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Mis items" id="XHs-oo-rsc" customClass="MovieTableViewController" customModule="IntroTV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9AJ-Ws-GJy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reusable_cell" id="cf7-Df-C11">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cf7-Df-C11" id="ukG-nb-Y2f">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
                             <outlet property="dataSource" destination="XHs-oo-rsc" id="uwp-eD-eZE"/>
                             <outlet property="delegate" destination="XHs-oo-rsc" id="Hpu-m1-ZW6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Mis items" largeTitleDisplayMode="always" id="07u-pM-riL"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="07u-pM-riL">
+                        <barButtonItem key="rightBarButtonItem" title="Avatar" id="i5h-kA-UVe">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="avatarButtonAct:" destination="XHs-oo-rsc" id="Kz2-FF-4Zb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="avatarButtonOut" destination="i5h-kA-UVe" id="tlz-s9-jYt"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="show_detail" id="f7d-Yb-hni"/>
+                        <segue destination="un9-es-oBY" kind="presentation" identifier="goToProfileSelection" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="X1J-tn-WTI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZ4-TG-PbV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -205,7 +204,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0I8-Xz-6wY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9KD-H5-Bfa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0I8-Xz-6wY" secondAttribute="trailing" constant="20" id="cRr-eR-MJB"/>
@@ -373,7 +372,7 @@
         <!--Choose Your Avatar:-->
         <scene sceneID="IyF-5I-mTU">
             <objects>
-                <viewController id="0AN-Ml-eT3" sceneMemberID="viewController">
+                <viewController id="0AN-Ml-eT3" customClass="AvatarSelection" customModule="IntroTV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FUX-BQ-8iN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,10 +386,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0x-cu-s83">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="101.33333333333333"/>
                                                 <state key="normal" title="Button" image="avatar_16"/>
+                                                <connections>
+                                                    <action selector="blueHead:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="EB4-fo-BE8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-2A-fsO">
                                                 <rect key="frame" x="112.66666666666666" y="0.0" width="87.333333333333343" height="101.33333333333333"/>
                                                 <state key="normal" title="Button" image="avatar_04"/>
+                                                <connections>
+                                                    <action selector="glasses:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="vBA-vL-dEt"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -400,10 +405,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNT-46-Pkg">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="101.33333333333333"/>
                                                 <state key="normal" title="Button" image="avatar_07"/>
+                                                <connections>
+                                                    <action selector="transexualMoor:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="Nl0-hv-ArF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-50-2Ny">
                                                 <rect key="frame" x="112.66666666666666" y="0.0" width="87.333333333333343" height="101.33333333333333"/>
                                                 <state key="normal" title="Button" image="avatar_36"/>
+                                                <connections>
+                                                    <action selector="lady:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="Yee-qk-GAv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -413,10 +424,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-mB-8eq">
                                                 <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="101.33333333333333"/>
                                                 <state key="normal" title="Button" image="avatar_30"/>
+                                                <connections>
+                                                    <action selector="motherLand:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="a3m-GJ-q7e"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-4g-tcq">
                                                 <rect key="frame" x="112.66666666666666" y="0.0" width="87.333333333333343" height="101.33333333333333"/>
                                                 <state key="normal" title="Button" image="avatar_19"/>
+                                                <connections>
+                                                    <action selector="grandma:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="84G-Wp-KuV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -433,7 +450,11 @@
                             <constraint firstItem="oAf-OK-6OJ" firstAttribute="leading" secondItem="5y1-Vc-xgP" secondAttribute="leading" constant="107" id="ypb-eQ-IEP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Choose Your Avatar:" id="p7n-Vn-Ryv"/>
+                    <navigationItem key="navigationItem" title="Choose Your Avatar:" id="p7n-Vn-Ryv">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="JBI-Sn-qdT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Kd-ZZ-Ly4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -447,12 +468,10 @@
         <image name="avatar_19" width="533" height="533"/>
         <image name="avatar_30" width="533" height="533"/>
         <image name="avatar_36" width="533" height="533"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -7,15 +7,15 @@
 
 import UIKit
 
-class TableVC: UITableViewController {
+class MovieTableViewController: UITableViewController {
     
-    var currentDescription: String = ""
+    @IBOutlet weak var avatarButtonOut: UIBarButtonItem!
     
-    let items: [Item] = [Item(name: "Item 1", description: "Descripción item uno"), Item(name: "Item 2", description: "Descripción item dos"), Item(name: "Item 3", description: "Descripción item tres"),  Item(name: "Item 4", description: "Descripción item cuatro")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,16 +24,41 @@ class TableVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showProfileSelectionIfNeeded()
+        avatarButtonOut.title = MoviesViewModel.selectedProfile
+     
+    }
+    
+    
+    private var profileSelectionScreenNeeded: Bool = true
+        private func showProfileSelectionIfNeeded() {
+            if profileSelectionScreenNeeded {
+            goToProfileSelection()
+            profileSelectionScreenNeeded = false
+            }
+        }
+    
+    @IBAction func avatarButtonAct(_ sender: Any) {
+        performSegue(withIdentifier: "goToProfileSelection", sender: self)
+    }
+    
+    
+    
+    
+    
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return 0
     }
     
     /*
@@ -46,12 +71,12 @@ class TableVC: UITableViewController {
      }
      */
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reusable_cell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row].name
-        
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "reusable_cell", for: indexPath)
+//        cell.textLabel?.text = items[indexPath.row].name
+//
+//        return cell
+//    }
     
     
     
@@ -93,19 +118,24 @@ class TableVC: UITableViewController {
     
     
     // MARK: - Navigation
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentDescription = items[indexPath.row].description
-        performSegue(withIdentifier: "show_detail", sender: nil)
-    }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if let destinationVC = segue.destination as? DetailVC {
-            destinationVC.descriptionText = currentDescription
+    private func goToProfileSelection() {            performSegue(withIdentifier: "goToProfileSelection", sender: self)
         }
-    }
     
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        currentDescription = items[indexPath.row].description
+//        performSegue(withIdentifier: "show_detail", sender: nil)
+//    }
+    
+//    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        if let destinationVC = segue.destination as? DetailVC {
+//            destinationVC.descriptionText = currentDescription
+//        }
+//    }
+//
     
 }

@@ -8,8 +8,8 @@ import UIKit
 import Foundation
 
 
-struct ProfileViewModel: Codable {
-    var selectedId: Int
+struct ProfileEditionViewModel {
+    static var name: String?
     
     
 }
