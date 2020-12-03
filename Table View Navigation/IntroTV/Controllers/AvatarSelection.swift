@@ -9,15 +9,11 @@ import Foundation
 
 
 class AvatarSelection: UIViewController {
-    
-    
-  
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-       
-      
+
         
     }
     

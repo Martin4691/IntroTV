@@ -22,7 +22,9 @@ class NewProfileVC: UIViewController {
     @IBOutlet weak var profile3Out: UIButton!
     @IBOutlet weak var label3Out: UILabel!
     
-    private let profile: String = "ProfileKey"
+
+    let profileManager: ProfileManager = ProfileManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +45,8 @@ class NewProfileVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        let listOfNames: [String] = UserDefaults.standard.stringArray(forKey: profile ) ?? [String]()
-        
-        for (index, name) in listOfNames.enumerated() {
+   
+        for (index, name) in profileManager.readProfiles().enumerated() {
             if index == 0 {
                 label0Out.text = name
             } else if index == 1 {
@@ -57,32 +57,30 @@ class NewProfileVC: UIViewController {
                 label3Out.text = name
             }
         }
-  
+        
         
     }
     
     
     
     @IBAction func profile0Act(_ sender: Any) {
-        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
-        
-        if storedProfile.count > 0 {
-        dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = storedProfile[0]
-            ProfileEditionViewModel.name = storedProfile[0]
+   
+        if profileManager.readProfiles().count > 0 {
+            dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = profileManager.readProfiles()[0]
+            ProfileEditionViewModel.name = profileManager.readProfiles()[0]
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }
-
+        
     }
     
     @IBAction func profile1Act(_ sender: Any) {
-        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
-        
-        if storedProfile.count > 1 {
-        dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = storedProfile[1]
-            ProfileEditionViewModel.name = storedProfile[1]
+    
+        if profileManager.readProfiles().count > 1 {
+            dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = profileManager.readProfiles()[1]
+            ProfileEditionViewModel.name = profileManager.readProfiles()[1]
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }
@@ -90,25 +88,23 @@ class NewProfileVC: UIViewController {
     }
     
     @IBAction func profile2Act(_ sender: Any) {
-        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
-        
-        if storedProfile.count > 2 {
-        dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = storedProfile[2]
-            ProfileEditionViewModel.name = storedProfile[2]
+
+        if profileManager.readProfiles().count > 2 {
+            dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = profileManager.readProfiles()[2]
+            ProfileEditionViewModel.name = profileManager.readProfiles()[2]
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }
-       
+        
     }
     
     @IBAction func profile3Act(_ sender: Any) {
-        let storedProfile = UserDefaults.standard.stringArray(forKey: profile) ?? [String]()
         
-        if storedProfile.count > 3 {
-        dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = storedProfile[3]
-            ProfileEditionViewModel.name = storedProfile[3]
+        if profileManager.readProfiles().count > 3 {
+            dismiss(animated: true, completion: nil)
+            MoviesViewModel.selectedProfile = profileManager.readProfiles()[3]
+            ProfileEditionViewModel.name = profileManager.readProfiles()[3]
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B1D46A825763CEA004F8C65 /* ProfileEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D46A725763CEA004F8C65 /* ProfileEditionViewModel.swift */; };
 		5B1D46AB25766BC6004F8C65 /* AvatarSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D46AA25766BC6004F8C65 /* AvatarSelection.swift */; };
 		5B1D46AE2576911E004F8C65 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1D46AD2576911E004F8C65 /* ProfileManager.swift */; };
 		5B3DA35925751A01002BE9EE /* NewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA35825751A01002BE9EE /* NewProfileVC.swift */; };
 		5B3DA35D257524C3002BE9EE /* EditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA35C257524C3002BE9EE /* EditorVC.swift */; };
-		5B3DA360257547DF002BE9EE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA35F257547DF002BE9EE /* Profile.swift */; };
 		5B43777F257845BD009CBCF8 /* CellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43777D257845BD009CBCF8 /* CellVC.swift */; };
 		5B437780257845BD009CBCF8 /* CellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43777E257845BD009CBCF8 /* CellVC.xib */; };
 		5B437AF925506B1C000E4C34 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B437AF825506B1C000E4C34 /* Item.swift */; };
+		5B75A28825794C1400DC5DDF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75A28625794C1300DC5DDF /* Profile.swift */; };
+		5B75A28925794C1400DC5DDF /* ProfileEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75A28725794C1300DC5DDF /* ProfileEditionViewModel.swift */; };
 		5B8F97EB254B1581007DED64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EA254B1581007DED64 /* AppDelegate.swift */; };
 		5B8F97ED254B1581007DED64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EC254B1581007DED64 /* SceneDelegate.swift */; };
 		5B8F97EF254B1581007DED64 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EE254B1581007DED64 /* DetailVC.swift */; };
@@ -29,15 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B1D46A725763CEA004F8C65 /* ProfileEditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditionViewModel.swift; sourceTree = "<group>"; };
 		5B1D46AA25766BC6004F8C65 /* AvatarSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelection.swift; sourceTree = "<group>"; };
 		5B1D46AD2576911E004F8C65 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		5B3DA35825751A01002BE9EE /* NewProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProfileVC.swift; sourceTree = "<group>"; };
 		5B3DA35C257524C3002BE9EE /* EditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorVC.swift; sourceTree = "<group>"; };
-		5B3DA35F257547DF002BE9EE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5B43777D257845BD009CBCF8 /* CellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellVC.swift; sourceTree = "<group>"; };
 		5B43777E257845BD009CBCF8 /* CellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellVC.xib; sourceTree = "<group>"; };
 		5B437AF825506B1C000E4C34 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		5B75A28625794C1300DC5DDF /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		5B75A28725794C1300DC5DDF /* ProfileEditionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditionViewModel.swift; sourceTree = "<group>"; };
 		5B8F97E7254B1581007DED64 /* IntroTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8F97EA254B1581007DED64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B8F97EC254B1581007DED64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				5B437AF825506B1C000E4C34 /* Item.swift */,
-				5B3DA35F257547DF002BE9EE /* Profile.swift */,
-				5B1D46A725763CEA004F8C65 /* ProfileEditionViewModel.swift */,
+				5B75A28625794C1300DC5DDF /* Profile.swift */,
+				5B75A28725794C1300DC5DDF /* ProfileEditionViewModel.swift */,
 				5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */,
 				5BAD1A252577E0F600DF01A7 /* Endpoints.swift */,
 			);
@@ -285,17 +285,17 @@
 				5B437AF925506B1C000E4C34 /* Item.swift in Sources */,
 				5B8F97EF254B1581007DED64 /* DetailVC.swift in Sources */,
 				5B8F9804254B18EB007DED64 /* MovieTableViewController.swift in Sources */,
+				5B75A28825794C1400DC5DDF /* Profile.swift in Sources */,
 				5B1D46AE2576911E004F8C65 /* ProfileManager.swift in Sources */,
 				5B43777F257845BD009CBCF8 /* CellVC.swift in Sources */,
-				5B1D46A825763CEA004F8C65 /* ProfileEditionViewModel.swift in Sources */,
 				5B3DA35925751A01002BE9EE /* NewProfileVC.swift in Sources */,
 				5B8F97EB254B1581007DED64 /* AppDelegate.swift in Sources */,
 				5BFDEFB125779EB200040C26 /* MoviesViewModel.swift in Sources */,
-				5B3DA360257547DF002BE9EE /* Profile.swift in Sources */,
 				5BAD1A262577E0F600DF01A7 /* Endpoints.swift in Sources */,
 				5B1D46AB25766BC6004F8C65 /* AvatarSelection.swift in Sources */,
 				5B8F97ED254B1581007DED64 /* SceneDelegate.swift in Sources */,
 				5B3DA35D257524C3002BE9EE /* EditorVC.swift in Sources */,
+				5B75A28925794C1400DC5DDF /* ProfileEditionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import Foundation
 class EditorVC: UIViewController {
     
 
+    
     @IBOutlet weak var editButtonOut: UIButton!
     @IBOutlet weak var editLabelOut: UILabel!
     @IBOutlet weak var textFieldOut: UITextField!
@@ -19,7 +20,7 @@ class EditorVC: UIViewController {
     
     
     private let profile: String = "ProfileKey"
-    
+    let profileManager: ProfileManager = ProfileManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,25 +43,17 @@ class EditorVC: UIViewController {
     
     @IBAction func saveButtonAct(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        
-        
+   
         guard let name = textFieldOut.text
         else { return }
         
-        var listOfNames: [String] = UserDefaults.standard.stringArray(forKey: profile ) ?? [String]()
-        
-        listOfNames.append(name)
-        UserDefaults.standard.set(listOfNames, forKey: profile)
-        UserDefaults.standard.synchronize()
-        print("\(listOfNames)")
-        
+        profileManager.saveProfile(name)
         
     }
     
     
-    
     @IBAction func removeButtonAct(_ sender: Any) {
-//        UserDefaults.standard.removeObject(forKey: ProfileEditionViewModel.name!)
+        
     }
     
     
