@@ -9,12 +9,20 @@ import Foundation
 import UIKit
 
 
-struct Endpoints {
-    static let movieDatabase: String = "https://developers.themoviedb.org/3/getting-started/introduction"
+enum Endpoints: String {
+    case movieDiscover = "https://api.themoviedb.org/3/discover/movie?"
     
-    static let moviePopular: String = "https://developers.themoviedb.org/3/discover/movie-discover"
+    case movieDetails = "https://api.themoviedb.org/3/movie/{movie_id}"
     
-    static let movieInfo: String = "https://developers.themoviedb.org/3/movies/get-movie-details"
+    var url: String { self.rawValue }
+    
+}
+
+
+enum EndpointsParameters: String {
+    case apiKey
+    case query = "q"
+    
     
     
 }
