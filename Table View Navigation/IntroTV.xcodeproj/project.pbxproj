@@ -18,6 +18,7 @@
 		5B75A28925794C1400DC5DDF /* ProfileEditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75A28725794C1300DC5DDF /* ProfileEditionViewModel.swift */; };
 		5B75A28D257A301800DC5DDF /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75A28C257A301800DC5DDF /* MovieList.swift */; };
 		5B75A295257A38F200DC5DDF /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75A294257A38F200DC5DDF /* MovieDetails.swift */; };
+		5B75A298257A3DA200DC5DDF /* MoviesManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75A297257A3DA200DC5DDF /* MoviesManagers.swift */; };
 		5B8F97EB254B1581007DED64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EA254B1581007DED64 /* AppDelegate.swift */; };
 		5B8F97ED254B1581007DED64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EC254B1581007DED64 /* SceneDelegate.swift */; };
 		5B8F97EF254B1581007DED64 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F97EE254B1581007DED64 /* DetailVC.swift */; };
@@ -26,6 +27,7 @@
 		5B8F97F7254B1584007DED64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F97F5254B1584007DED64 /* LaunchScreen.storyboard */; };
 		5B8F9804254B18EB007DED64 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */; };
 		5BAD1A262577E0F600DF01A7 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD1A252577E0F600DF01A7 /* Endpoints.swift */; };
+		5BADD577257ED68200B36A3E /* BarButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BADD576257ED68200B36A3E /* BarButtonExtension.swift */; };
 		5BFDEFB125779EB200040C26 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */; };
 		96277FC77C57527530B4AC03 /* Pods_IntroTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01DE08319DCAEAAF42269F5 /* Pods_IntroTV.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,7 @@
 		5B75A28725794C1300DC5DDF /* ProfileEditionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditionViewModel.swift; sourceTree = "<group>"; };
 		5B75A28C257A301800DC5DDF /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		5B75A294257A38F200DC5DDF /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		5B75A297257A3DA200DC5DDF /* MoviesManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesManagers.swift; sourceTree = "<group>"; };
 		5B8F97E7254B1581007DED64 /* IntroTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8F97EA254B1581007DED64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B8F97EC254B1581007DED64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		5B8F97F8254B1584007DED64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		5BAD1A252577E0F600DF01A7 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		5BADD576257ED68200B36A3E /* BarButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonExtension.swift; sourceTree = "<group>"; };
 		5BFDEFB025779EB200040C26 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		B01DE08319DCAEAAF42269F5 /* Pods_IntroTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IntroTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B938C365FE92EDCD1C2BDB72 /* Pods-IntroTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IntroTV.debug.xcconfig"; path = "Target Support Files/Pods-IntroTV/Pods-IntroTV.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5B1D46AD2576911E004F8C65 /* ProfileManager.swift */,
+				5B75A297257A3DA200DC5DDF /* MoviesManagers.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -93,10 +98,11 @@
 		5B48B53C2551AC2B007FFAAE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5B8F97EE254B1581007DED64 /* DetailVC.swift */,
+				5BADD576257ED68200B36A3E /* BarButtonExtension.swift */,
 				5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */,
 				5B43777D257845BD009CBCF8 /* CellVC.swift */,
 				5B43777E257845BD009CBCF8 /* CellVC.xib */,
+				5B8F97EE254B1581007DED64 /* DetailVC.swift */,
 				5B3DA35825751A01002BE9EE /* NewProfileVC.swift */,
 				5B3DA35C257524C3002BE9EE /* EditorVC.swift */,
 				5B1D46AA25766BC6004F8C65 /* AvatarSelection.swift */,
@@ -307,9 +313,11 @@
 				5B3DA35925751A01002BE9EE /* NewProfileVC.swift in Sources */,
 				5B8F97EB254B1581007DED64 /* AppDelegate.swift in Sources */,
 				5BFDEFB125779EB200040C26 /* MoviesViewModel.swift in Sources */,
+				5B75A298257A3DA200DC5DDF /* MoviesManagers.swift in Sources */,
 				5BAD1A262577E0F600DF01A7 /* Endpoints.swift in Sources */,
 				5B1D46AB25766BC6004F8C65 /* AvatarSelection.swift in Sources */,
 				5B8F97ED254B1581007DED64 /* SceneDelegate.swift in Sources */,
+				5BADD577257ED68200B36A3E /* BarButtonExtension.swift in Sources */,
 				5B3DA35D257524C3002BE9EE /* EditorVC.swift in Sources */,
 				5B75A28925794C1400DC5DDF /* ProfileEditionViewModel.swift in Sources */,
 			);

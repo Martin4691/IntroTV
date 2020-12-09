@@ -24,6 +24,11 @@ struct MovieList: Codable {
     }
 }
 
+enum MovieParameters: String {
+    case api_key
+    case query = "q"
+}
+
 
 struct Movie: Codable {
     let posterPath: String?

@@ -8,7 +8,7 @@ import UIKit
 import Foundation
 
 struct Profile: Codable {
-//    var id: Int
+    var id: Int
     var name: String 
     //  var image: UIImage
     

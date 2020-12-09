@@ -4,7 +4,7 @@
 //
 //  Created by Martín on 29/10/2020.
 //
-
+import Alamofire
 import UIKit
 
 class DetailVC: UIViewController {

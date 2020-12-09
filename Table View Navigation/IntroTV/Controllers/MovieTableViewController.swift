@@ -5,13 +5,18 @@
 //  Created by Martín on 29/10/2020.
 //
 
+import AlamofireImage
 import UIKit
 
 class MovieTableViewController: UITableViewController {
     
+    
     @IBOutlet weak var avatarButtonOut: UIBarButtonItem!
     
-    let sectionsName: [String] = ["Popular", "New", "Most Voted", "Random", "International"]
+    let moviesManager = MoviesManagers()
+    var movies: [Movie]? = []
+    
+    var idMoviesList = [Int: String]()
     
     
     override func viewDidLoad() {
@@ -19,15 +24,48 @@ class MovieTableViewController: UITableViewController {
         let nib = UINib(nibName: "CellVC", bundle: nil)
         // nib es igual que xib, pero con una nomenclatura antigua.
         self.tableView.register(nib, forCellReuseIdentifier: "standardCell")
-        
         super.viewDidLoad()
+        //        fetchMovieList()
+        fetchMovieDetails()
+        //        fetchMovieId()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    private func fetchMovieList() {
+        moviesManager.fetchMovieList(success: { (movieList) in 
+            
+            for movies in movieList.results {
+                self.moviesManager.fetchMovieDetails(movieId: String(movies.id)) { details in print("=> \(details.title): \(String(describing: details.overview)) ")
+                    print(">---------------------------------------<")
+                }
+                print("La peli se llama: \(movies.title)")
+            }
+            self.tableView.reloadData()
+        })
+    }
+    
+    
+    private func fetchMovieDetails() {
+        moviesManager.fetchMovieDetails(movieId: "\(Array(idMoviesList.keys))" , success: { (movieDetails) in
+            print("Details!:\n\(movieDetails)")
+            self.tableView.reloadData()
+        })
+    }
+    
+    
+    private func fetchMovieId() {
+        moviesManager.fetchMovieList(success: { (idList) in
+            for ids in idList.results {
+                self.moviesManager.fetchMovieDetails(movieId: String(ids.id)) { details in
+                    self.idMoviesList.updateValue("\(details.title)", forKey: details.id)
+                    print("Se introduce la siguiente pelicula en el diccionario=\nID: \(details.id), TITULO: \(details.title)")
+                    print(self.idMoviesList)
+                }
+            }
+            self.tableView.reloadData()
+        })
+    }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -55,108 +93,81 @@ class MovieTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return SectionType.allCases.count
+        
     }
     
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+        
     }
     
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
-     }
-     */
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "standardCell", for: indexPath)
         
+        if let moviesCell = cell as? CellVC,
+           let section: SectionType = SectionType(rawValue: indexPath.section) {
+            moviesCell.rowHeight = section.rowHeight
+            moviesCell.circullarCells = true//section.isCircular
+            moviesCell.movies = moviesForSection(indexPath.section)
+            moviesCell.delegate = self
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.section == 0 {
-            return 200.0
-        } else {
-            return 150.0
+        guard let section: SectionType = SectionType(rawValue: indexPath.section) else {
+            return 100
         }
+        return section.rowHeight
     }
     
+    private func moviesForSection(_ section: Int) -> [Movie] {
+        guard let allMovies = self.movies,
+              let sectionType: SectionType = SectionType(rawValue: section) else {
+            return [] }
+        switch sectionType {
+        case .mostPopular:
+            return allMovies.sorted{ $0.popularity > $1.popularity}
+        case .recentlyAdded:
+            return allMovies.sorted{ $0.releaseDate > $1.releaseDate}
+        case .mostVoted:
+            return allMovies.sorted{ $0.voteAverage > $1.voteAverage}
+        case .discover:
+            return allMovies.shuffled()
+        case .internationalMovies:
+            return allMovies.filter{ $0.originalLanguage != "en"}
+            
+            
+        }
+        
+    }
     
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }    
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     
     // MARK: - Navigation
     
-    private func goToProfileSelection() {            performSegue(withIdentifier: "goToProfileSelection", sender: self)
+    private func goToProfileSelection() {
+        performSegue(withIdentifier: "goToProfileSelection", sender: self)
+    }
+    
+    private func goToMovieDetails() {
+        performSegue(withIdentifier: "show_detail", sender: self)
     }
     
     
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        currentDescription = items[indexPath.row].description
-    //        performSegue(withIdentifier: "show_detail", sender: nil)
-    //    }
-    
-    //    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        // Get the new view controller using segue.destination.
-    //        // Pass the selected object to the new view controller.
-    //        if let destinationVC = segue.destination as? DetailVC {
-    //            destinationVC.descriptionText = currentDescription
-    //        }
-    //    }
-    //
     
     
-    
-    //  MARK: - Section Info
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // aqui Cesc uso una enum con sus case y asi fue dandole valores segun la necesidad (nombre, tamañano, etc...)
-        
-        return sectionsName[section]
+        guard let sectionType: SectionType = SectionType(rawValue: section) else {
+            return "<missing_title>"
+        }
+        return sectionType.name
     }
     
     
@@ -165,14 +176,52 @@ class MovieTableViewController: UITableViewController {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}
+
+// MARK: - Table View Delegate
+extension MovieTableViewController: CellVCDelegate {
+    func didSelectMovie(movieId: Int) {
+        MoviesViewModel.selectedMovieId = movieId
+        goToMovieDetails()
+    }
+}
+
+//  MARK: - Info for Sections
+extension MovieTableViewController {
+    enum SectionType: Int, CaseIterable {
+        case mostPopular, recentlyAdded, mostVoted, discover, internationalMovies
+        
+        var name: String {
+            switch self {
+            case .mostPopular:
+                return "Most Populars"
+            case .recentlyAdded:
+                return "Recently Added"
+            case .mostVoted:
+                return "Most Voted"
+            case .discover:
+                return "For you"
+            case .internationalMovies:
+                return "International Movies"
+            }
+        }
+        
+        var rowHeight: CGFloat {
+            switch self {
+            case .mostPopular:
+                return 300.0
+            default:
+                return 150.0
+            }
+        }
+        
+        var isCircular: Bool {
+            switch self {
+            case .mostVoted:
+                return true
+            default:
+                return false
+            }
+        }
+    }
 }

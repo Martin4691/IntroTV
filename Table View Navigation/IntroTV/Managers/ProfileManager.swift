@@ -4,7 +4,7 @@
 //
 //  Created by Martín on 01/12/2020.
 //
-
+import Alamofire
 import Foundation
 import UIKit
 
