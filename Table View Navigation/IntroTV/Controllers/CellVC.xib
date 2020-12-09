@@ -22,7 +22,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Ep-kO-U9o">
                                 <rect key="frame" x="0.0" y="0.0" width="950" height="200"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z95-jm-mLn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z95-jm-mLn">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                         <color key="backgroundColor" red="1" green="0.95702354180000004" blue="0.081662649500000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -32,25 +32,40 @@
                                             <action selector="buttonTouchedAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Nr0-J4-aKp"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWF-wO-FeM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWF-wO-FeM">
                                         <rect key="frame" x="160" y="0.0" width="150" height="200"/>
                                         <color key="backgroundColor" red="0.72069026700000005" green="0.79365623689999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="buttonTouchedAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="81I-e1-mOz"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDy-mQ-ooz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDy-mQ-ooz">
                                         <rect key="frame" x="320" y="0.0" width="150" height="200"/>
                                         <color key="backgroundColor" red="1" green="0.44811556990000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="buttonTouchedAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K6j-1J-YeI"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oo-dH-oUT">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oo-dH-oUT">
                                         <rect key="frame" x="480" y="0.0" width="150" height="200"/>
                                         <color key="backgroundColor" red="0.70541440450000004" green="1" blue="0.65000490929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="buttonTouchedAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aTP-qj-dLD"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMe-CQ-Rq8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMe-CQ-Rq8">
                                         <rect key="frame" x="640" y="0.0" width="150" height="200"/>
                                         <color key="backgroundColor" red="0.95554274780000004" green="1" blue="0.39865540799999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="buttonTouchedAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qDs-NO-BbW"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJt-MT-KbP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJt-MT-KbP">
                                         <rect key="frame" x="800" y="0.0" width="150" height="200"/>
                                         <color key="backgroundColor" red="0.59202519590000002" green="1" blue="0.86917003699999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="buttonTouchedAct:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qSL-vv-EPl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -85,10 +100,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="buttons" destination="lJt-MT-KbP" id="kWy-BM-eab"/>
                 <outlet property="rectangulaConstraints" destination="i36-UH-A7x" id="Z0i-tw-tRO"/>
                 <outlet property="squaredConstraints" destination="tm7-SS-Uvp" id="J5J-01-Xdc"/>
-                <outletCollection property="buttonsCollection" destination="z95-jm-mLn" collectionClass="NSMutableArray" id="lat-1g-gWI"/>
+                <outletCollection property="buttonsCollection" destination="z95-jm-mLn" collectionClass="NSMutableArray" id="oOS-MN-Zij"/>
+                <outletCollection property="buttonsCollection" destination="aWF-wO-FeM" collectionClass="NSMutableArray" id="fbc-v3-WZp"/>
+                <outletCollection property="buttonsCollection" destination="oDy-mQ-ooz" collectionClass="NSMutableArray" id="cP0-bQ-kb7"/>
+                <outletCollection property="buttonsCollection" destination="9Oo-dH-oUT" collectionClass="NSMutableArray" id="GcD-Db-x73"/>
+                <outletCollection property="buttonsCollection" destination="SMe-CQ-Rq8" collectionClass="NSMutableArray" id="ycg-gv-zxp"/>
+                <outletCollection property="buttonsCollection" destination="lJt-MT-KbP" collectionClass="NSMutableArray" id="90e-IL-be2"/>
             </connections>
             <point key="canvasLocation" x="-65.217391304347828" y="139.95535714285714"/>
         </tableViewCell>

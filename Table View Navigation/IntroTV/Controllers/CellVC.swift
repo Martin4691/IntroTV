@@ -20,10 +20,15 @@ class CellVC: UITableViewCell {
     @IBOutlet weak var squaredConstraints: NSLayoutConstraint!
     @IBOutlet var buttonsCollection: [UIButton]!
     
+    
+    
     var delegate: CellVCDelegate?
     
     var circullarCells: Bool = false {
         didSet {
+            squaredConstraints.isActive = false
+            rectangulaConstraints.isActive = false
+            
             squaredConstraints.isActive = circullarCells
             rectangulaConstraints.isActive = !circullarCells
             updateButtonsFormat()
@@ -64,7 +69,7 @@ class CellVC: UITableViewCell {
                 let urlToImage = Endpoints.movieCoverImage.url + posterPath
                 if let url = URL(string: urlToImage) {
                     button.af.setImage(for: .normal, url: url)
-                    //aqui creo que falta el alamofire image
+
                     button.isHidden = false
                 }
             }

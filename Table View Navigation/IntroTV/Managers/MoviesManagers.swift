@@ -28,13 +28,13 @@ struct MoviesManagers {
 
     
     
-    func fetchMovieDetails(movieId: String,
+    func fetchMovieDetails(movieId: Int,
                            success: @escaping (MoviesDetails) -> ()) {
         let parameters: [String:String] = [
             MovieParameters.api_key.rawValue: MoviesManagers.apiKeyValue
         ]
         
-        let fullUrl = Endpoints.movieDetails.url + "/" + movieId
+        let fullUrl = Endpoints.movieDetails.url + "/" + String(movieId)
         AF.request(fullUrl, parameters: parameters).validate().responseDecodable(of: MoviesDetails.self) { response in
             guard let listOfMovies = response.value else {
                 debugPrint("Se te esta atascando en la petición sobre MovieList \(#function).")

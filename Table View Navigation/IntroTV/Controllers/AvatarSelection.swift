@@ -43,7 +43,9 @@ class AvatarSelection: UIViewController {
         
     }
     
-    
+    @IBAction func backButtonAct(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     
     

@@ -25,17 +25,20 @@ class MovieTableViewController: UITableViewController {
         // nib es igual que xib, pero con una nomenclatura antigua.
         self.tableView.register(nib, forCellReuseIdentifier: "standardCell")
         super.viewDidLoad()
-        //        fetchMovieList()
-        fetchMovieDetails()
-        //        fetchMovieId()
+//        fetchMovieList()
+        fetchMovies()
+//        fetchMovieDetails()
+//        fetchMovieId()
+        
+      
+        
         
     }
     
     private func fetchMovieList() {
-        moviesManager.fetchMovieList(success: { (movieList) in 
-            
+        moviesManager.fetchMovieList(success: { (movieList) in
             for movies in movieList.results {
-                self.moviesManager.fetchMovieDetails(movieId: String(movies.id)) { details in print("=> \(details.title): \(String(describing: details.overview)) ")
+                self.moviesManager.fetchMovieDetails(movieId: movies.id) { details in print("=> \(details.title): \(String(describing: details.overview)) ")
                     print(">---------------------------------------<")
                 }
                 print("La peli se llama: \(movies.title)")
@@ -45,18 +48,27 @@ class MovieTableViewController: UITableViewController {
     }
     
     
-    private func fetchMovieDetails() {
-        moviesManager.fetchMovieDetails(movieId: "\(Array(idMoviesList.keys))" , success: { (movieDetails) in
-            print("Details!:\n\(movieDetails)")
+//    private func fetchMovieDetails() {
+//        moviesManager.fetchMovieDetails(movieId: "\(Array(idMoviesList.keys))" , success: { (movieDetails) in
+//            print("Details!:\n\(movieDetails)")
+//            self.tableView.reloadData()
+//        })
+//    }
+    
+    
+    private func fetchMovies() {
+        moviesManager.fetchMovieList() { moviesList in
+            self.movies = moviesList.results
             self.tableView.reloadData()
-        })
+        }
     }
+    
     
     
     private func fetchMovieId() {
         moviesManager.fetchMovieList(success: { (idList) in
             for ids in idList.results {
-                self.moviesManager.fetchMovieDetails(movieId: String(ids.id)) { details in
+                self.moviesManager.fetchMovieDetails(movieId: ids.id) { details in
                     self.idMoviesList.updateValue("\(details.title)", forKey: details.id)
                     print("Se introduce la siguiente pelicula en el diccionario=\nID: \(details.id), TITULO: \(details.title)")
                     print(self.idMoviesList)
@@ -111,7 +123,7 @@ class MovieTableViewController: UITableViewController {
         if let moviesCell = cell as? CellVC,
            let section: SectionType = SectionType(rawValue: indexPath.section) {
             moviesCell.rowHeight = section.rowHeight
-            moviesCell.circullarCells = true//section.isCircular
+            moviesCell.circullarCells = section.isCircular
             moviesCell.movies = moviesForSection(indexPath.section)
             moviesCell.delegate = self
         }
@@ -163,7 +175,6 @@ class MovieTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        // aqui Cesc uso una enum con sus case y asi fue dandole valores segun la necesidad (nombre, tamañano, etc...)
         guard let sectionType: SectionType = SectionType(rawValue: section) else {
             return "<missing_title>"
         }
@@ -182,6 +193,7 @@ class MovieTableViewController: UITableViewController {
 extension MovieTableViewController: CellVCDelegate {
     func didSelectMovie(movieId: Int) {
         MoviesViewModel.selectedMovieId = movieId
+        print("Id movie: \(movieId)")
         goToMovieDetails()
     }
 }
