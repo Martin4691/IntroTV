@@ -11,17 +11,8 @@ import AVKit
 class DetailVC: UIViewController {
     
     let movieManager = MoviesManagers()
+    var movieDetails: MoviesDetails?
     
-    // esta mierda es un lab de campeonato:
-    let videoURL = URL(string: "https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8")
-    
-    func showVideo() {
-    let player = AVPlayer(url: videoURL!)
-    let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = viewOut.bounds
-        viewOut.layer.addSublayer(playerLayer)
-        player.play()
-    }
     
     @IBOutlet weak var viewOut: UIView!
     
@@ -43,20 +34,15 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         fetchDetailFromMovie()
         
-        showVideo()
-        
-        
-        
     }
-    
-    
-    
-    
     
     
     private func fetchDetailFromMovie() {
         guard let selectedId = MoviesViewModel.selectedMovieId else { return }
-        movieManager.fetchMovieDetails(movieId: selectedId) { movieDetails in self.loadIt(movieDetails: movieDetails)
+        movieManager.fetchMovieDetails(movieId: selectedId) { movieDetails in
+            self.movieDetails = movieDetails
+            self.loadIt(movieDetails: movieDetails)
+            self.showVideo()
         }
     }
     
@@ -70,13 +56,67 @@ class DetailVC: UIViewController {
         descriptionLabel.text = "Overview:\n\(movieDetails.overview ?? "No overview")\n"
         genreLabel.text = "Genre: " + movieDetails.genres.map{$0.name}.joined(separator: ", ") + ".\n"
         productedByLabel.text = "Producted by: " + movieDetails.productionCompanies.map{$0.name}.joined(separator: ", ") + ".\n"
-        
+//        configurePlayer(movieDetails: movieDetails)
     }
     
     
+    
+    // MARK: - Ejemplos para reproducir videos.
+    
+    //1 AVPlayerLayer: Forma sencilla de reproducir video (no tiene ningun boton ni herramienta por defecto añadida).
+    
+    
+    
+    func showVideo() {
+        guard let movieDetails = self.movieDetails else { return }
+        let player = AVPlayer(url: movieDetails.videoURL!)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = viewOut.bounds
+        viewOut.layer.addSublayer(playerLayer)
+        player.play()
+    }
+    
+    /*
+    // 2 AVPlayetViewController: + Complejo + Herramientas por defecto
+    
+    private func configurePlayer(movieDetails: MoviesDetails) {
+        guard let videoURL = movieDetails.videoURL else {
+            debugPrint("Error: video URL invalid in \(#function)")
+            return
+            
+        }
+        
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        guard let playerView = playerViewController.view else {
+            debugPrint("Error: player view is nil")
+            return
+        }
+        
+        self.addChild(playerViewController)
+        viewOut.addSubview(playerView)
+        playerViewController.didMove(toParent: self)
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let topConstraint = NSLayoutConstraint(item: playerView, attribute: .top, relatedBy: .equal, toItem: viewOut, attribute: .top, multiplier: 1, constant: 0)
+        
+        let bottomConstraint = NSLayoutConstraint(item: playerView, attribute: .bottom, relatedBy: .equal, toItem: viewOut, attribute: .bottom, multiplier: 1, constant: 0)
+        
+        let leadingConstraint = NSLayoutConstraint(item: playerView, attribute: .leading, relatedBy: .equal, toItem: viewOut, attribute: .leading, multiplier: 1, constant: 0)
+        
+        let trailingConstraint = NSLayoutConstraint(item: playerView, attribute: .trailing, relatedBy: .equal, toItem: viewOut, attribute: .trailing, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
+        
+        player.play()
+        
+    }
+    */
+
     @IBAction func playAct(_ sender: Any) {
-        let videoURL = URL(string: "https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8")
-        let player = AVPlayer(url: videoURL!)
+        guard let movieDetails = self.movieDetails else { return }
+        let player = AVPlayer(url: movieDetails.videoURL!)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         self.present(playerViewController, animated: true) {
