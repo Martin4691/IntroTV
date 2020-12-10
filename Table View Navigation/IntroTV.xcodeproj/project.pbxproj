@@ -96,13 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				5BADD576257ED68200B36A3E /* BarButtonExtension.swift */,
-				5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */,
-				5B8F97EE254B1581007DED64 /* DetailVC.swift */,
-				5B43777D257845BD009CBCF8 /* CellVC.swift */,
-				5B43777E257845BD009CBCF8 /* CellVC.xib */,
-				5B3DA35825751A01002BE9EE /* NewProfileVC.swift */,
-				5B3DA35C257524C3002BE9EE /* EditorVC.swift */,
-				5B1D46AA25766BC6004F8C65 /* AvatarSelection.swift */,
+				5B48F8DF258217AD00AFD38B /* Show Movies In Profiles */,
+				5B48F8DE2582178600AFD38B /* Create & Edit Profiles */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +119,27 @@
 				5B8F97F5254B1584007DED64 /* LaunchScreen.storyboard */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		5B48F8DE2582178600AFD38B /* Create & Edit Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DA35825751A01002BE9EE /* NewProfileVC.swift */,
+				5B3DA35C257524C3002BE9EE /* EditorVC.swift */,
+				5B1D46AA25766BC6004F8C65 /* AvatarSelection.swift */,
+			);
+			path = "Create & Edit Profiles";
+			sourceTree = "<group>";
+		};
+		5B48F8DF258217AD00AFD38B /* Show Movies In Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F9803254B18EB007DED64 /* MovieTableViewController.swift */,
+				5B8F97EE254B1581007DED64 /* DetailVC.swift */,
+				5B43777D257845BD009CBCF8 /* CellVC.swift */,
+				5B43777E257845BD009CBCF8 /* CellVC.xib */,
+			);
+			path = "Show Movies In Profiles";
 			sourceTree = "<group>";
 		};
 		5B75A28B257A300800DC5DDF /* Data */ = {
