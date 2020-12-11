@@ -9,8 +9,11 @@ import Foundation
 
 
 struct ProfileEditionViewModel {
-    static var name: String?
     
+    static var name: String?
+    static var newAvatarImageName: String?
+//    static var selectedProfileManager: _______
+//    static var selectedProfile: Profile?
     
 }
 

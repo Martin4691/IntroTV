@@ -423,12 +423,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xqs-ZM-RgV">
-                                <rect key="frame" x="90" y="150" width="195" height="243"/>
+                                <rect key="frame" x="70" y="100" width="235" height="343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpp-Mq-bkt">
-                                        <rect key="frame" x="0.0" y="2.5" width="195" height="68.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="173"/>
                                         <color key="tintColor" systemColor="systemGray5Color"/>
-                                        <state key="normal" backgroundImage="pencil" catalog="system">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -436,7 +436,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQb-Tb-8qE">
-                                        <rect key="frame" x="0.0" y="83" width="195" height="30"/>
+                                        <rect key="frame" x="0.0" y="183" width="235" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Mcy-vM-avm"/>
                                         </constraints>
@@ -445,7 +445,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ye4-wZ-EUJ">
-                                        <rect key="frame" x="0.0" y="123" width="195" height="40"/>
+                                        <rect key="frame" x="0.0" y="223" width="235" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6pO-Nj-8lu"/>
@@ -458,10 +458,10 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-LE-lqt">
-                                        <rect key="frame" x="0.0" y="173" width="195" height="30"/>
+                                        <rect key="frame" x="0.0" y="273" width="235" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Ages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5X-XR-Bya">
-                                                <rect key="frame" x="50" y="0.0" width="95" height="20"/>
+                                                <rect key="frame" x="50" y="0.0" width="135" height="20"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -478,7 +478,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE3-Yt-1s2">
-                                        <rect key="frame" x="0.0" y="213" width="195" height="30"/>
+                                        <rect key="frame" x="0.0" y="313" width="235" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="MPn-cz-Yt4"/>
                                         </constraints>
@@ -494,10 +494,10 @@
                         <viewLayoutGuide key="safeArea" id="L8N-dZ-z4z"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xqs-ZM-RgV" firstAttribute="leading" secondItem="L8N-dZ-z4z" secondAttribute="leading" constant="90" id="3JW-k6-9C3"/>
-                            <constraint firstItem="L8N-dZ-z4z" firstAttribute="bottom" secondItem="xqs-ZM-RgV" secondAttribute="bottom" constant="230" id="PDM-6u-zvi"/>
-                            <constraint firstItem="L8N-dZ-z4z" firstAttribute="trailing" secondItem="xqs-ZM-RgV" secondAttribute="trailing" constant="90" id="Tnf-CT-QEe"/>
-                            <constraint firstItem="xqs-ZM-RgV" firstAttribute="top" secondItem="L8N-dZ-z4z" secondAttribute="top" constant="150" id="uK4-0E-Se7"/>
+                            <constraint firstItem="xqs-ZM-RgV" firstAttribute="leading" secondItem="L8N-dZ-z4z" secondAttribute="leading" constant="70" id="6KM-0y-4gB"/>
+                            <constraint firstItem="L8N-dZ-z4z" firstAttribute="bottom" secondItem="xqs-ZM-RgV" secondAttribute="bottom" constant="180" id="c1d-QK-h7J"/>
+                            <constraint firstItem="L8N-dZ-z4z" firstAttribute="trailing" secondItem="xqs-ZM-RgV" secondAttribute="trailing" constant="70" id="oPp-it-IqQ"/>
+                            <constraint firstItem="xqs-ZM-RgV" firstAttribute="top" secondItem="L8N-dZ-z4z" secondAttribute="top" constant="100" id="qeb-eB-SQF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile:" id="zbW-Ka-3zB">
@@ -536,61 +536,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oAf-OK-6OJ">
-                                <rect key="frame" x="107" y="200" width="161" height="183"/>
+                                <rect key="frame" x="80" y="150" width="215" height="293"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qQn-jv-jYs">
-                                        <rect key="frame" x="0.0" y="0.0" width="161" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="87.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0x-cu-s83">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="87.5"/>
                                                 <state key="normal" title="Button" image="avatar_16"/>
                                                 <connections>
                                                     <action selector="blueHead:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="EB4-fo-BE8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-2A-fsO">
-                                                <rect key="frame" x="93" y="0.0" width="68" height="51"/>
-                                                <state key="normal" title="Button" image="avatar_04"/>
+                                                <rect key="frame" x="120" y="0.0" width="95" height="87.5"/>
+                                                <state key="normal" title="Button" image="avatar_08"/>
                                                 <connections>
-                                                    <action selector="glasses:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="vBA-vL-dEt"/>
+                                                    <action selector="gipsyGirl:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="vBA-vL-dEt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kF4-et-Vgd">
-                                        <rect key="frame" x="0.0" y="66" width="161" height="51"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="215" height="88"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNT-46-Pkg">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="88"/>
                                                 <state key="normal" title="Button" image="avatar_07"/>
                                                 <connections>
                                                     <action selector="transexualMoor:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="Nl0-hv-ArF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-50-2Ny">
-                                                <rect key="frame" x="93" y="0.0" width="68" height="51"/>
-                                                <state key="normal" title="Button" image="avatar_36"/>
+                                                <rect key="frame" x="120" y="0.0" width="95" height="88"/>
+                                                <state key="normal" title="Button" image="avatar_38"/>
                                                 <connections>
-                                                    <action selector="lady:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="Yee-qk-GAv"/>
+                                                    <action selector="captain:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="Yee-qk-GAv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="KIB-tO-dJC">
-                                        <rect key="frame" x="0.0" y="132" width="161" height="51"/>
+                                        <rect key="frame" x="0.0" y="205.5" width="215" height="87.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbI-mB-8eq">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="87.5"/>
                                                 <state key="normal" title="Button" image="avatar_30"/>
                                                 <connections>
                                                     <action selector="motherLand:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="a3m-GJ-q7e"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-4g-tcq">
-                                                <rect key="frame" x="93" y="0.0" width="68" height="51"/>
+                                                <rect key="frame" x="120" y="0.0" width="95" height="87.5"/>
                                                 <state key="normal" title="Button" image="avatar_19"/>
                                                 <connections>
-                                                    <action selector="grandma:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="84G-Wp-KuV"/>
+                                                    <action selector="blackGrandma:" destination="0AN-Ml-eT3" eventType="touchUpInside" id="84G-Wp-KuV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -601,11 +601,11 @@
                         <viewLayoutGuide key="safeArea" id="5y1-Vc-xgP"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5y1-Vc-xgP" firstAttribute="bottom" secondItem="oAf-OK-6OJ" secondAttribute="bottom" constant="240" id="4Ha-KU-ZqF"/>
+                            <constraint firstItem="oAf-OK-6OJ" firstAttribute="leading" secondItem="5y1-Vc-xgP" secondAttribute="leading" constant="80" id="6me-LL-D8N"/>
                             <constraint firstItem="oAf-OK-6OJ" firstAttribute="centerX" secondItem="FUX-BQ-8iN" secondAttribute="centerX" id="8LE-Cx-pE8"/>
-                            <constraint firstItem="oAf-OK-6OJ" firstAttribute="top" secondItem="5y1-Vc-xgP" secondAttribute="top" constant="200" id="OlN-zz-g0I"/>
-                            <constraint firstItem="5y1-Vc-xgP" firstAttribute="trailing" secondItem="oAf-OK-6OJ" secondAttribute="trailing" constant="107" id="Ux7-h4-gkF"/>
-                            <constraint firstItem="oAf-OK-6OJ" firstAttribute="leading" secondItem="5y1-Vc-xgP" secondAttribute="leading" constant="107" id="ypb-eQ-IEP"/>
+                            <constraint firstItem="5y1-Vc-xgP" firstAttribute="bottom" secondItem="oAf-OK-6OJ" secondAttribute="bottom" constant="180" id="TDu-HF-mBH"/>
+                            <constraint firstItem="oAf-OK-6OJ" firstAttribute="top" secondItem="5y1-Vc-xgP" secondAttribute="top" constant="150" id="pzU-3y-kQI"/>
+                            <constraint firstItem="5y1-Vc-xgP" firstAttribute="trailing" secondItem="oAf-OK-6OJ" secondAttribute="trailing" constant="80" id="u0Y-KT-hKC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Your Avatar:" id="p7n-Vn-Ryv">
@@ -624,16 +624,15 @@
     </scenes>
     <resources>
         <image name="arrow.down.to.line" catalog="system" width="128" height="128"/>
-        <image name="avatar_04" width="533" height="533"/>
         <image name="avatar_07" width="533" height="533"/>
+        <image name="avatar_08" width="533" height="533"/>
         <image name="avatar_16" width="533" height="533"/>
         <image name="avatar_19" width="533" height="533"/>
         <image name="avatar_30" width="533" height="533"/>
-        <image name="avatar_36" width="533" height="533"/>
+        <image name="avatar_38" width="533" height="533"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>

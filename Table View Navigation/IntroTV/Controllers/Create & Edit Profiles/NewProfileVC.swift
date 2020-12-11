@@ -44,72 +44,66 @@ class NewProfileVC: UIViewController {
         
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
-   
-        for (index, name) in profileManager.readProfiles().enumerated() {
+        for (index, profile) in profileManager.readProfiles().enumerated() {
             if index == 0 {
-                label0Out.text = name
+                label0Out.text = profile.name
             } else if index == 1 {
-                label1Out.text = name
+                label1Out.text = profile.name
             } else if index == 2 {
-                label2Out.text = name
+                label2Out.text = profile.name
             } else if index == 3 {
-                label3Out.text = name
+                label3Out.text = profile.name
             }
         }
-        
-        
     }
-    
     
     
     @IBAction func profile0Act(_ sender: Any) {
-   
         if profileManager.readProfiles().count > 0 {
             dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = profileManager.readProfiles()[0]
-            ProfileEditionViewModel.name = profileManager.readProfiles()[0]
+            MoviesViewModel.selectedProfile =
+                profileManager.readProfiles()[0].name
+            ProfileEditionViewModel.name = profileManager.readProfiles()[0].name
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }
-        
     }
     
     @IBAction func profile1Act(_ sender: Any) {
-    
         if profileManager.readProfiles().count > 1 {
             dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = profileManager.readProfiles()[1]
-            ProfileEditionViewModel.name = profileManager.readProfiles()[1]
+            MoviesViewModel.selectedProfile = profileManager.readProfiles()[1].name
+            ProfileEditionViewModel.name = profileManager.readProfiles()[1].name
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }
-        
     }
     
     @IBAction func profile2Act(_ sender: Any) {
-
         if profileManager.readProfiles().count > 2 {
             dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = profileManager.readProfiles()[2]
-            ProfileEditionViewModel.name = profileManager.readProfiles()[2]
+            MoviesViewModel.selectedProfile = profileManager.readProfiles()[2].name
+            ProfileEditionViewModel.name = profileManager.readProfiles()[2].name
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }
-        
     }
     
     @IBAction func profile3Act(_ sender: Any) {
-        
         if profileManager.readProfiles().count > 3 {
             dismiss(animated: true, completion: nil)
-            MoviesViewModel.selectedProfile = profileManager.readProfiles()[3]
-            ProfileEditionViewModel.name = profileManager.readProfiles()[3]
+            MoviesViewModel.selectedProfile = profileManager.readProfiles()[3].name
+            ProfileEditionViewModel.name = profileManager.readProfiles()[3].name
         } else {
             self.performSegue(withIdentifier: "segueToEdit", sender: self)
         }
-        
     }
+   
+    
+    
+    
     
     
     

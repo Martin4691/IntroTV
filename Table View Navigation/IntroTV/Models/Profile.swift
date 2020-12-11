@@ -7,10 +7,20 @@
 import UIKit
 import Foundation
 
-struct Profile: Codable {
+struct Profile: Equatable, Codable {
+    var name: String
     var id: Int
-    var name: String 
-    //  var image: UIImage
+    var imageName: String
+    var image: UIImage? {
+        return UIImage(named: imageName)
+    }
+    
+    //Cosa de Cesc que a dia de hoy no se para que sirve.
+    static func == (lhs: Self, rhs: Self) -> Bool {
+//        return lhs.id == rhs.id
+        return lhs.name == rhs.name && lhs.imageName == rhs.imageName
+    }
+
     
 }
 

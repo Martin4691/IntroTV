@@ -10,8 +10,6 @@ import Foundation
 
 class EditorVC: UIViewController {
     
-
-    
     @IBOutlet weak var editButtonOut: UIButton!
     @IBOutlet weak var editLabelOut: UILabel!
     @IBOutlet weak var textFieldOut: UITextField!
@@ -22,13 +20,24 @@ class EditorVC: UIViewController {
     private let profile: String = "ProfileKey"
     let profileManager: ProfileManager = ProfileManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textFieldOut.layer.borderColor = UIColor.gray.cgColor
         textFieldOut.layer.borderWidth = 2
+        editButtonOut.setBackgroundImage(UIImage(systemName: "pencil"), for: .normal)
+  
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
-         
+        
+        if let avatarImageName = ProfileEditionViewModel.newAvatarImageName {
+            editButtonOut.setImage(UIImage(named: avatarImageName), for: .normal)
+            editButtonOut.setBackgroundImage(nil, for: .normal)
+            
+        } 
         
     }
     
@@ -47,15 +56,15 @@ class EditorVC: UIViewController {
         guard let name = textFieldOut.text
         else { return }
         
-        profileManager.saveProfile(name)
+        let profile: Profile = Profile(name: name, id: 0, imageName: ProfileEditionViewModel.newAvatarImageName!)
+        
+        profileManager.saveProfile(profile)
         
     }
-    
     
     @IBAction func removeButtonAct(_ sender: Any) {
         
     }
-    
     
     @IBAction func editImgAct(_ sender: Any) {
         performSegue(withIdentifier: "segueToAvatarImage", sender: self)

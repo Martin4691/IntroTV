@@ -11,6 +11,7 @@ import Foundation
 struct MoviesViewModel {
     static var selectedProfile: String?
     static var selectedMovieId: Int?
+    static var newAvaterImage: String?
     
 }
 
