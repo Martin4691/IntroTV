@@ -24,40 +24,48 @@ class NewProfileVC: UIViewController {
     
 
     let profileManager: ProfileManager = ProfileManager()
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profile0Out.layer.borderColor = UIColor.gray.cgColor
-        profile0Out.layer.borderWidth = 5
-        profile1Out.layer.borderColor = UIColor.gray.cgColor
-        profile1Out.layer.borderWidth = 5
-        profile2Out.layer.borderColor = UIColor.gray.cgColor
-        profile2Out.layer.borderWidth = 5
-        profile3Out.layer.borderColor = UIColor.gray.cgColor
-        profile3Out.layer.borderWidth = 5
+        
         
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        
         navigationController?.navigationBar.barTintColor = UIColor.clear
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        
         for (index, profile) in profileManager.readProfiles().enumerated() {
             if index == 0 {
                 label0Out.text = profile.name
+
+                profile0Out.backgroundColor = .black
+                profile0Out.setImage(UIImage(named: profile.imageName), for: .normal)
+                
             } else if index == 1 {
                 label1Out.text = profile.name
+                profile1Out.backgroundColor = .black
+                profile1Out.setImage(UIImage(named: profile.imageName), for: .normal)
+                
             } else if index == 2 {
                 label2Out.text = profile.name
+                profile2Out.backgroundColor = .black
+                profile2Out.setImage(UIImage(named: profile.imageName), for: .normal)
+                
             } else if index == 3 {
                 label3Out.text = profile.name
+                profile3Out.backgroundColor = .black
+                profile3Out.setImage(UIImage(named: profile.imageName), for: .normal)
             }
         }
     }
+    
     
     
     @IBAction func profile0Act(_ sender: Any) {

@@ -19,7 +19,7 @@ class EditorVC: UIViewController {
     
     private let profile: String = "ProfileKey"
     let profileManager: ProfileManager = ProfileManager()
-    
+    let pencilImage: UIImage = UIImage(systemName: "pencil")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,11 @@ class EditorVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        
-        if let avatarImageName = ProfileEditionViewModel.newAvatarImageName {
+        if let avatarImageName = ProfileEditionViewModel.AvatarImageName {
             editButtonOut.setImage(UIImage(named: avatarImageName), for: .normal)
             editButtonOut.setBackgroundImage(nil, for: .normal)
-            
-        } 
+        }
+        
         
     }
     
@@ -46,7 +45,16 @@ class EditorVC: UIViewController {
     @IBAction func textFieldAct(_ sender: Any) {
     }
     
+    
+    
+    func removeAvatar() {
+        ProfileEditionViewModel.AvatarImageName = nil
+        editButtonOut.setBackgroundImage(UIImage(systemName: "pencil"), for: .normal)
+        
+    }
+    
     @IBAction func cancelButtonAct(_ sender: Any) {
+       removeAvatar()
         navigationController?.popViewController(animated: true)
     }
     
@@ -56,7 +64,7 @@ class EditorVC: UIViewController {
         guard let name = textFieldOut.text
         else { return }
         
-        let profile: Profile = Profile(name: name, id: 0, imageName: ProfileEditionViewModel.newAvatarImageName!)
+        let profile: Profile = Profile(name: name, id: 0, imageName: ProfileEditionViewModel.AvatarImageName ?? "LogoPNGTenoch")
         
         profileManager.saveProfile(profile)
         

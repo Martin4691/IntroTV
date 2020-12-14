@@ -20,42 +20,42 @@ class AvatarSelection: UIViewController {
     
         
     @IBAction func blueHead(_ sender: Any) {
-        ProfileEditionViewModel.newAvatarImageName = "avatar_16"
+        ProfileEditionViewModel.AvatarImageName = "avatar_16"
         
         navigationController?.popViewController(animated: true)
        
     }
   
     @IBAction func gipsyGirl(_ sender: Any) {
-        ProfileEditionViewModel.newAvatarImageName = "avatar_08"
+        ProfileEditionViewModel.AvatarImageName = "avatar_08"
         
         navigationController?.popViewController(animated: true)
     
     }
     
     @IBAction func transexualMoor(_ sender: Any) {
-        ProfileEditionViewModel.newAvatarImageName = "avatar_07"
+        ProfileEditionViewModel.AvatarImageName = "avatar_07"
         
         navigationController?.popViewController(animated: true)
  
     }
     
     @IBAction func captain(_ sender: Any) {
-        ProfileEditionViewModel.newAvatarImageName = "avatar_38"
+        ProfileEditionViewModel.AvatarImageName = "avatar_38"
         
         navigationController?.popViewController(animated: true)
    
     }
     
     @IBAction func motherLand(_ sender: Any) {
-        ProfileEditionViewModel.newAvatarImageName = "avatar_30"
+        ProfileEditionViewModel.AvatarImageName = "avatar_30"
         
         navigationController?.popViewController(animated: true)
    
     }
     
     @IBAction func blackGrandma(_ sender: Any) {
-        ProfileEditionViewModel.newAvatarImageName = "avatar_19"
+        ProfileEditionViewModel.AvatarImageName = "avatar_19"
         
         navigationController?.popViewController(animated: true)
   
