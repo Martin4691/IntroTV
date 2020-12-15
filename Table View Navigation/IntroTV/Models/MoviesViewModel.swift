@@ -9,9 +9,9 @@ import Foundation
 
 
 struct MoviesViewModel {
-    static var selectedProfile: String?
+    static var selectedProfile: Profile?
     static var selectedMovieId: Int?
-    static var newAvaterImage: String? = ProfileEditionViewModel.AvatarImageName
+    static var newAvatarImage: String? = ProfileEditionViewModel.AvatarImageName
     
 }
 

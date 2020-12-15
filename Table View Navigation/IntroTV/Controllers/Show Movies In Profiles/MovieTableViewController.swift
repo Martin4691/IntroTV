@@ -17,6 +17,7 @@ class MovieTableViewController: UITableViewController {
     var movies: [Movie]? = []
     
     var idMoviesList = [Int: String]()
+
     
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class MovieTableViewController: UITableViewController {
         let nib = UINib(nibName: "CellVC", bundle: nil)
         // nib es igual que xib, pero con una nomenclatura antigua.
         self.tableView.register(nib, forCellReuseIdentifier: "standardCell")
+        
         super.viewDidLoad()
 //        fetchMovieList()
         fetchMovies()
@@ -79,28 +81,17 @@ class MovieTableViewController: UITableViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let profile = MoviesViewModel.selectedProfile {
+            avatarButtonOut.image = profile.miniImage
+        }
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showProfileSelectionIfNeeded()
-        avatarButtonOut.image = UIImage(named: "avatar_16_mini")
         
-        if MoviesViewModel.newAvaterImage == "avatar_16" {
-            MoviesViewModel.newAvaterImage = "avatar_16_mini"
-        } else  if MoviesViewModel.newAvaterImage == "avatar_08" {
-            MoviesViewModel.newAvaterImage = "avatar_08_mini"
-        } else  if MoviesViewModel.newAvaterImage == "avatar_07" {
-            MoviesViewModel.newAvaterImage = "avatar_07_mini"
-        } else  if MoviesViewModel.newAvaterImage == "avatar_38" {
-            MoviesViewModel.newAvaterImage = "avatar_38_mini"
-        } else  if MoviesViewModel.newAvaterImage == "avatar_30" {
-            MoviesViewModel.newAvaterImage = "avatar_30_mini"
-        } else if MoviesViewModel.newAvaterImage == "avatar_19" {
-            MoviesViewModel.newAvaterImage = "avatar_19_mini"
-        }
-        
-        
-        
-    
     }
     
     private var profileSelectionScreenNeeded: Bool = true
@@ -110,6 +101,8 @@ class MovieTableViewController: UITableViewController {
             profileSelectionScreenNeeded = false
         }
     }
+    
+   
     
     @IBAction func avatarButtonAct(_ sender: Any) {
         performSegue(withIdentifier: "goToProfileSelection", sender: self)

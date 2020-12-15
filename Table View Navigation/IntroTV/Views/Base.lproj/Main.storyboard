@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4cd-iL-U9p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4cd-iL-U9p">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,7 +23,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="07u-pM-riL">
-                        <barButtonItem key="rightBarButtonItem" title="Avatar" id="i5h-kA-UVe">
+                        <barButtonItem key="rightBarButtonItem" id="i5h-kA-UVe">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="avatarButtonAct:" destination="XHs-oo-rsc" id="Kz2-FF-4Zb"/>
@@ -166,14 +166,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Who are you?" id="BKh-mY-f4x">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="SsH-F3-mXh">
+                        <barButtonItem key="leftBarButtonItem" id="SsH-F3-mXh">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="doneAct:" destination="izZ-bM-Jsx" id="yMW-eY-lwf"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="DPj-ft-FIO">
+                        <barButtonItem key="rightBarButtonItem" id="DPj-ft-FIO">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="editModeAct:" destination="izZ-bM-Jsx" id="i80-Oi-Swv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneOut" destination="SsH-F3-mXh" id="8y3-rl-kFC"/>
+                        <outlet property="editModeOut" destination="DPj-ft-FIO" id="imm-ny-ean"/>
                         <outlet property="label0Out" destination="H83-aj-o4T" id="RTi-bc-fJX"/>
                         <outlet property="label1Out" destination="v4G-P7-LEh" id="efd-o8-kFP"/>
                         <outlet property="label2Out" destination="ZrX-2t-toi" id="9j3-WD-kOk"/>

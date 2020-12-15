@@ -10,10 +10,15 @@ import Foundation
 struct Profile: Equatable, Codable {
     var name: String
     var id: Int
-    var imageName: String
+    var imageName: String 
     var image: UIImage? {
         return UIImage(named: imageName)
     }
+    
+    var miniImage: UIImage? {
+        return UIImage(named: (imageName+"_mini"))
+    }
+
     
     //Cosa de Cesc que a dia de hoy no se para que sirve.
     static func == (lhs: Self, rhs: Self) -> Bool {

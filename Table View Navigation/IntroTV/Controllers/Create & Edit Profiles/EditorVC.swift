@@ -36,8 +36,7 @@ class EditorVC: UIViewController {
             editButtonOut.setImage(UIImage(named: avatarImageName), for: .normal)
             editButtonOut.setBackgroundImage(nil, for: .normal)
         }
-        
-        
+ 
     }
     
     
@@ -45,7 +44,10 @@ class EditorVC: UIViewController {
     @IBAction func textFieldAct(_ sender: Any) {
     }
     
-    
+//    func removeAllDates() {
+//        removeAvatar()
+//        ProfileEditionViewModel.name = nil
+//    }
     
     func removeAvatar() {
         ProfileEditionViewModel.AvatarImageName = nil
@@ -71,6 +73,12 @@ class EditorVC: UIViewController {
     }
     
     @IBAction func removeButtonAct(_ sender: Any) {
+//        removeAll()
+        if let profile = MoviesViewModel.selectedProfile {
+            profileManager.removeProfile(profile)
+            navigationController?.popViewController(animated: true)
+        }
+        
         
     }
     
