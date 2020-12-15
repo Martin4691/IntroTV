@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mis items-->
+        <!--MovieTableViewController-->
         <scene sceneID="TVm-00-4KY">
             <objects>
-                <tableViewController title="Mis items" id="XHs-oo-rsc" customClass="MovieTableViewController" customModule="IntroTV" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Mis items" id="XHs-oo-rsc" userLabel="MovieTableViewController" customClass="MovieTableViewController" customModule="IntroTV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="18" sectionFooterHeight="18" id="9AJ-Ws-GJy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

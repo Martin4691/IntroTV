@@ -82,10 +82,26 @@ class MovieTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         showProfileSelectionIfNeeded()
-        avatarButtonOut.title = MoviesViewModel.selectedProfile
+        avatarButtonOut.image = UIImage(named: "avatar_16_mini")
         
-    }
+        if MoviesViewModel.newAvaterImage == "avatar_16" {
+            MoviesViewModel.newAvaterImage = "avatar_16_mini"
+        } else  if MoviesViewModel.newAvaterImage == "avatar_08" {
+            MoviesViewModel.newAvaterImage = "avatar_08_mini"
+        } else  if MoviesViewModel.newAvaterImage == "avatar_07" {
+            MoviesViewModel.newAvaterImage = "avatar_07_mini"
+        } else  if MoviesViewModel.newAvaterImage == "avatar_38" {
+            MoviesViewModel.newAvaterImage = "avatar_38_mini"
+        } else  if MoviesViewModel.newAvaterImage == "avatar_30" {
+            MoviesViewModel.newAvaterImage = "avatar_30_mini"
+        } else if MoviesViewModel.newAvaterImage == "avatar_19" {
+            MoviesViewModel.newAvaterImage = "avatar_19_mini"
+        }
+        
+        
+        
     
+    }
     
     private var profileSelectionScreenNeeded: Bool = true
     private func showProfileSelectionIfNeeded() {
