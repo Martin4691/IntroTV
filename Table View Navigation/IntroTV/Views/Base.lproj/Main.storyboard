@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
                             <outlet property="dataSource" destination="XHs-oo-rsc" id="uwp-eD-eZE"/>
                             <outlet property="delegate" destination="XHs-oo-rsc" id="Hpu-m1-ZW6"/>
@@ -209,24 +213,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sKh-A3-ZBr">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="440"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dD6-F9-0C0">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                                 <color key="backgroundColor" systemColor="labelColor"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="9mq-oi-T5c"/>
+                                                    <constraint firstAttribute="height" constant="210" id="KDh-mx-9jJ"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzY-BK-PUA">
-                                                <rect key="frame" x="0.0" y="305" width="375" height="32.5"/>
+                                                <rect key="frame" x="0.0" y="215" width="375" height="32.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rkd-ZX-xpt">
-                                                <rect key="frame" x="0.0" y="342.5" width="375" height="30"/>
+                                                <rect key="frame" x="0.0" y="252.5" width="375" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Popularity!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkF-ej-Zjv">
                                                         <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
@@ -258,22 +262,8 @@
                                                     <constraint firstAttribute="height" constant="30" id="euJ-XC-KUG"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rM-b3-S81">
-                                                <rect key="frame" x="0.0" y="377.5" width="375" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="gtR-QB-m39"/>
-                                                </constraints>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="   Play" image="play.fill" catalog="system">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="playAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y06-6O-NJH"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9g-eB-sTv">
-                                                <rect key="frame" x="0.0" y="412.5" width="375" height="30"/>
+                                                <rect key="frame" x="0.0" y="287.5" width="375" height="30"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Bei-Pk-fjw"/>
@@ -287,25 +277,25 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B11-dy-ZxU">
-                                                <rect key="frame" x="0.0" y="447.5" width="375" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="322.5" width="375" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ny-N5-ZUs">
-                                                <rect key="frame" x="0.0" y="474" width="375" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="349" width="375" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producted by:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5e-sQ-jcj">
-                                                <rect key="frame" x="0.0" y="499.5" width="375" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="374.5" width="375" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jdQ-Up-Lt4">
-                                                <rect key="frame" x="0.0" y="525" width="375" height="40"/>
+                                                <rect key="frame" x="0.0" y="400" width="375" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ssx-Kn-ZUX">
                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
@@ -337,8 +327,10 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="gKu-Bn-PUU" firstAttribute="bottom" secondItem="sKh-A3-ZBr" secondAttribute="bottom" id="AsJ-SW-Dpp"/>
                                     <constraint firstItem="sKh-A3-ZBr" firstAttribute="width" secondItem="O4Q-B9-ES4" secondAttribute="width" id="HiY-y7-i49"/>
@@ -352,6 +344,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IOs-Nd-THc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4W8-BM-cUA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IOs-Nd-THc" secondAttribute="trailing" id="5G3-RM-5T0"/>
@@ -372,7 +365,6 @@
                         <outlet property="downloadOut" destination="A9g-eB-sTv" id="sVG-6T-MCl"/>
                         <outlet property="genreLabel" destination="9Ny-N5-ZUs" id="yCn-fr-JbS"/>
                         <outlet property="labelTitle" destination="QzY-BK-PUA" id="wai-9X-a2m"/>
-                        <outlet property="playOut" destination="2rM-b3-S81" id="TiP-Le-83b"/>
                         <outlet property="productedByLabel" destination="A5e-sQ-jcj" id="Msr-7s-Kvy"/>
                         <outlet property="random2" destination="iYf-d9-1aH" id="wE5-Ju-Y96"/>
                         <outlet property="randomItem" destination="gkF-ej-Zjv" id="73y-yE-OqO"/>
@@ -621,7 +613,6 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
-        <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">

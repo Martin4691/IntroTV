@@ -32,8 +32,8 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDetailFromMovie()
-        
+        fetchDetailFromMovie() 
+     
     }
     
     
@@ -42,7 +42,8 @@ class DetailVC: UIViewController {
         movieManager.fetchMovieDetails(movieId: selectedId) { movieDetails in
             self.movieDetails = movieDetails
             self.loadIt(movieDetails: movieDetails)
-            self.showVideo()
+//            self.showVideo() -> metodo 1
+            
         }
     }
     
@@ -56,7 +57,8 @@ class DetailVC: UIViewController {
         descriptionLabel.text = "Overview:\n\(movieDetails.overview ?? "No overview")\n"
         genreLabel.text = "Genre: " + movieDetails.genres.map{$0.name}.joined(separator: ", ") + ".\n"
         productedByLabel.text = "Producted by: " + movieDetails.productionCompanies.map{$0.name}.joined(separator: ", ") + ".\n"
-//        configurePlayer(movieDetails: movieDetails)
+        configurePlayer(movieDetails: movieDetails)
+        // comentar el configureplayer para que no funcione el metodo 2, y descomentar igual lo comentado del metodo 1.
     }
     
     
@@ -67,16 +69,16 @@ class DetailVC: UIViewController {
     
     
     
-    func showVideo() {
-        guard let movieDetails = self.movieDetails else { return }
-        let player = AVPlayer(url: movieDetails.videoURL!)
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = viewOut.bounds
-        viewOut.layer.addSublayer(playerLayer)
-        player.play()
-    }
+//    func showVideo() {
+//        guard let movieDetails = self.movieDetails else { return }
+//        let player = AVPlayer(url: movieDetails.videoURL!)
+//        let playerLayer = AVPlayerLayer(player: player)
+//        playerLayer.frame = viewOut.bounds
+//        viewOut.layer.addSublayer(playerLayer)
+//        player.play()
+//    }
     
-    /*
+    
     // 2 AVPlayetViewController: + Complejo + Herramientas por defecto
     
     private func configurePlayer(movieDetails: MoviesDetails) {
@@ -112,17 +114,18 @@ class DetailVC: UIViewController {
         player.play()
         
     }
-    */
-
-    @IBAction func playAct(_ sender: Any) {
-        guard let movieDetails = self.movieDetails else { return }
-        let player = AVPlayer(url: movieDetails.videoURL!)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.present(playerViewController, animated: true) {
-            playerViewController.player!.play()
-        }
-    }
+    
+    
+//          El Boton play fue eliminado del storyboard pero no del codigo por problemas con el color y por abrir un segundo reproductor.
+//    @IBAction func playAct(_ sender: Any) {
+//        guard let movieDetails = self.movieDetails else { return }
+//        let player = AVPlayer(url: movieDetails.videoURL!)
+//        let playerViewController = AVPlayerViewController()
+//        playerViewController.player = player
+//        self.present(playerViewController, animated: true) {
+//            playerViewController.player!.play()
+//        }
+//    }
     @IBAction func downloadAct(_ sender: Any) {
     }
     
