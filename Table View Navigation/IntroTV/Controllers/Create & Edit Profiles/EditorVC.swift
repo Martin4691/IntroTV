@@ -28,27 +28,45 @@ class EditorVC: UIViewController {
         textFieldOut.layer.borderWidth = 2
         editButtonOut.setBackgroundImage(UIImage(systemName: "pencil"), for: .normal)
   
+        if let avatarImageName = ProfileEditionViewModel.AvatarImageName {
+            editButtonOut.setImage(UIImage(named: avatarImageName), for: .normal)
+            editButtonOut.setBackgroundImage(nil, for: .normal)
+            textFieldOut.text = ProfileEditionViewModel.name
+        } else {
+            textFieldOut.layer.borderColor = UIColor.gray.cgColor
+            textFieldOut.layer.borderWidth = 2
+            editButtonOut.setBackgroundImage(UIImage(systemName: "pencil"), for: .normal)
+        }
+    
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
         if let avatarImageName = ProfileEditionViewModel.AvatarImageName {
             editButtonOut.setImage(UIImage(named: avatarImageName), for: .normal)
             editButtonOut.setBackgroundImage(nil, for: .normal)
+            textFieldOut.text = ProfileEditionViewModel.name
+        } else {
+            textFieldOut.layer.borderColor = UIColor.gray.cgColor
+            textFieldOut.layer.borderWidth = 2
+            editButtonOut.setBackgroundImage(UIImage(systemName: "pencil"), for: .normal)
         }
- 
+
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+       
+            editButtonOut.setImage(UIImage(systemName: "pencil"), for: .normal)
+            editButtonOut.setBackgroundImage(nil, for: .normal)
+            textFieldOut.text = "Insert name here"
+        
+    }
     
     @IBAction func textFieldAct(_ sender: Any) {
     }
     
-//    func removeAllDates() {
-//        removeAvatar()
-//        ProfileEditionViewModel.name = nil
-//    }
-    
+
     func removeAvatar() {
         ProfileEditionViewModel.AvatarImageName = nil
         editButtonOut.setBackgroundImage(UIImage(systemName: "pencil"), for: .normal)
@@ -62,23 +80,25 @@ class EditorVC: UIViewController {
     
     @IBAction func saveButtonAct(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-   
+        
+        
         guard let name = textFieldOut.text
         else { return }
-        
         let profile: Profile = Profile(name: name, id: 0, imageName: ProfileEditionViewModel.AvatarImageName ?? "LogoPNGTenoch")
         
+        if let selectedProfile = MoviesViewModel.selectedProfile {
+        profileManager.removeProfile(selectedProfile)
+        }
         profileManager.saveProfile(profile)
         
     }
     
     @IBAction func removeButtonAct(_ sender: Any) {
-//        removeAll()
+
         if let profile = MoviesViewModel.selectedProfile {
             profileManager.removeProfile(profile)
-            navigationController?.popViewController(animated: true)
         }
-        
+        navigationController?.popViewController(animated: true)
         
     }
     
