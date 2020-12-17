@@ -17,7 +17,7 @@ class MovieTableViewController: UITableViewController {
     var movies: [Movie]? = []
     
     var idMoviesList = [Int: String]()
-
+    
     
     
     override func viewDidLoad() {
@@ -27,15 +27,15 @@ class MovieTableViewController: UITableViewController {
         self.tableView.register(nib, forCellReuseIdentifier: "standardCell")
         
         super.viewDidLoad()
-//        fetchMovieList()
+        
         fetchMovies()
-//        fetchMovieDetails()
-//        fetchMovieId()
-        
-      
-        
-        
+        //        fetchMovieList()
+        //        fetchMovieDetails()
+        //        fetchMovieId()
+  
     }
+    
+    //MARK: - Fetch functions:
     
     private func fetchMovieList() {
         moviesManager.fetchMovieList(success: { (movieList) in
@@ -50,12 +50,12 @@ class MovieTableViewController: UITableViewController {
     }
     
     
-//    private func fetchMovieDetails() {
-//        moviesManager.fetchMovieDetails(movieId: "\(Array(idMoviesList.keys))" , success: { (movieDetails) in
-//            print("Details!:\n\(movieDetails)")
-//            self.tableView.reloadData()
-//        })
-//    }
+    //    private func fetchMovieDetails() {
+    //        moviesManager.fetchMovieDetails(movieId: "\(Array(idMoviesList.keys))" , success: { (movieDetails) in
+    //            print("Details!:\n\(movieDetails)")
+    //            self.tableView.reloadData()
+    //        })
+    //    }
     
     
     private func fetchMovies() {
@@ -102,7 +102,7 @@ class MovieTableViewController: UITableViewController {
         }
     }
     
-   
+    
     
     @IBAction func avatarButtonAct(_ sender: Any) {
         performSegue(withIdentifier: "goToProfileSelection", sender: self)
@@ -117,7 +117,6 @@ class MovieTableViewController: UITableViewController {
         return SectionType.allCases.count
         
     }
-    
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,12 +138,14 @@ class MovieTableViewController: UITableViewController {
         return cell
     }
     
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let section: SectionType = SectionType(rawValue: indexPath.section) else {
             return 100
         }
         return section.rowHeight
     }
+    
     
     private func moviesForSection(_ section: Int) -> [Movie] {
         guard let allMovies = self.movies,
@@ -162,11 +163,9 @@ class MovieTableViewController: UITableViewController {
         case .internationalMovies:
             return allMovies.filter{ $0.originalLanguage != "en"}
             
-            
         }
         
     }
-    
     
     
     // MARK: - Navigation
@@ -179,24 +178,17 @@ class MovieTableViewController: UITableViewController {
         performSegue(withIdentifier: "show_detail", sender: self)
     }
     
-    
-    
-    
-    
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let sectionType: SectionType = SectionType(rawValue: section) else {
             return "<missing_title>"
         }
         return sectionType.name
     }
-    
-    
-    
-    
-    
-    
+      
     
 }
+
 
 // MARK: - Table View Delegate
 extension MovieTableViewController: CellVCDelegate {
@@ -206,6 +198,7 @@ extension MovieTableViewController: CellVCDelegate {
         goToMovieDetails()
     }
 }
+
 
 //  MARK: - Info for Sections
 extension MovieTableViewController {

@@ -23,6 +23,4 @@ enum EndpointsParameters: String {
     case apiKey
     case query = "q"
     
-    
-    
 }

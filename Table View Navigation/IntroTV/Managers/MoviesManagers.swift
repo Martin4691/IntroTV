@@ -49,8 +49,6 @@ struct MoviesManagers {
     
     
     
-    
-    
     private func printResponse<T>(_ response: AFDataResponse<T>) {
         debugPrint("Request: \(String(describing: response.request))")
         debugPrint("Error: \(String(describing: response.error))")

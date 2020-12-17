@@ -70,10 +70,7 @@ struct MoviesDetails: Codable {
 
         let index = self.id % videos.count
         return URL(string: videos[index])
-    }
-
-    
-    
+    }  
     
 }
 

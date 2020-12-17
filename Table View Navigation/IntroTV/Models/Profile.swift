@@ -20,7 +20,7 @@ struct Profile: Equatable, Codable {
     }
 
     
-    //Cosa de Cesc que a dia de hoy no se para que sirve.
+    //Codigo de Cesc
     static func == (lhs: Self, rhs: Self) -> Bool {
 //        return lhs.id == rhs.id
         return lhs.name == rhs.name && lhs.imageName == rhs.imageName

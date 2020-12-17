@@ -10,6 +10,9 @@ import Foundation
 
 class NewProfileVC: UIViewController {
     
+    
+    //MARK: - Outlets
+    
     @IBOutlet weak var profile0Out: UIButton!
     @IBOutlet weak var label0Out: UILabel!
     
@@ -45,6 +48,8 @@ class NewProfileVC: UIViewController {
      }
     }
     
+    
+    //MARK: - Appear Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +91,7 @@ class NewProfileVC: UIViewController {
     }
     
     
+    //MARK: - Profiles Actions
     
     @IBAction func profile0Act(_ sender: Any) {
         if profileManager.readProfiles().count > 0 && !isEditMode {
@@ -134,6 +140,8 @@ class NewProfileVC: UIViewController {
     }
    
     
+    //MARK: - Other Actions
+    
     @IBAction func doneAct(_ sender: Any) {
         isEditMode = false
          editionMode()
@@ -144,8 +152,7 @@ class NewProfileVC: UIViewController {
     @IBAction func editModeAct(_ sender: Any) {
        isEditMode = true
         editionMode()
-        
-        
+    
     }
     
   
@@ -170,11 +177,7 @@ class NewProfileVC: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
+
     
 }
 

@@ -13,13 +13,11 @@ protocol CellVCDelegate {
 }
 
 
-
 class CellVC: UITableViewCell {
 
     @IBOutlet weak var rectangulaConstraints: NSLayoutConstraint!
     @IBOutlet weak var squaredConstraints: NSLayoutConstraint!
     @IBOutlet var buttonsCollection: [UIButton]!
-    
     
     
     var delegate: CellVCDelegate?
@@ -34,6 +32,7 @@ class CellVC: UITableViewCell {
             updateButtonsFormat()
         }
     }
+    
     
     var rowHeight: CGFloat = 0 {
         didSet {
@@ -102,7 +101,5 @@ class CellVC: UITableViewCell {
         }
     }
     
-    
-    
-    
+   
 }

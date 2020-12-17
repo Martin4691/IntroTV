@@ -33,7 +33,7 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchDetailFromMovie() 
-     
+        
     }
     
     
@@ -42,7 +42,7 @@ class DetailVC: UIViewController {
         movieManager.fetchMovieDetails(movieId: selectedId) { movieDetails in
             self.movieDetails = movieDetails
             self.loadIt(movieDetails: movieDetails)
-//            self.showVideo() -> metodo 1
+            //            self.showVideo() -> metodo 1
             
         }
     }
@@ -69,14 +69,14 @@ class DetailVC: UIViewController {
     
     
     
-//    func showVideo() {
-//        guard let movieDetails = self.movieDetails else { return }
-//        let player = AVPlayer(url: movieDetails.videoURL!)
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = viewOut.bounds
-//        viewOut.layer.addSublayer(playerLayer)
-//        player.play()
-//    }
+    //    func showVideo() {
+    //        guard let movieDetails = self.movieDetails else { return }
+    //        let player = AVPlayer(url: movieDetails.videoURL!)
+    //        let playerLayer = AVPlayerLayer(player: player)
+    //        playerLayer.frame = viewOut.bounds
+    //        viewOut.layer.addSublayer(playerLayer)
+    //        player.play()
+    //    }
     
     
     // 2 AVPlayetViewController: + Complejo + Herramientas por defecto
@@ -116,16 +116,16 @@ class DetailVC: UIViewController {
     }
     
     
-//          El Boton play fue eliminado del storyboard pero no del codigo por problemas con el color y por abrir un segundo reproductor.
-//    @IBAction func playAct(_ sender: Any) {
-//        guard let movieDetails = self.movieDetails else { return }
-//        let player = AVPlayer(url: movieDetails.videoURL!)
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        self.present(playerViewController, animated: true) {
-//            playerViewController.player!.play()
-//        }
-//    }
+    //          El Boton play fue eliminado del storyboard pero no del codigo por problemas con el color y por abrir un segundo reproductor.
+    //    @IBAction func playAct(_ sender: Any) {
+    //        guard let movieDetails = self.movieDetails else { return }
+    //        let player = AVPlayer(url: movieDetails.videoURL!)
+    //        let playerViewController = AVPlayerViewController()
+    //        playerViewController.player = player
+    //        self.present(playerViewController, animated: true) {
+    //            playerViewController.player!.play()
+    //        }
+    //    }
     @IBAction func downloadAct(_ sender: Any) {
     }
     
@@ -143,9 +143,6 @@ class DetailVC: UIViewController {
     }
     
     
-    
-    
-    
-    
+ 
 }
 
