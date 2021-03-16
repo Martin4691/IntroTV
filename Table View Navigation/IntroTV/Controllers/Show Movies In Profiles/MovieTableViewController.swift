@@ -29,9 +29,7 @@ class MovieTableViewController: UITableViewController {
         super.viewDidLoad()
         
         fetchMovies()
-        //        fetchMovieList()
-        //        fetchMovieDetails()
-        //        fetchMovieId()
+
   
     }
     

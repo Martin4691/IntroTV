@@ -37,14 +37,14 @@ class NewProfileVC: UIViewController {
     func editionMode() {
      if isEditMode == false {
         doneOut.hide()
-       editModeOut.show()
+        editModeOut.show()
         editModeOut.title = "Edit"
         editModeOut.tintColor = .white
      } else {
         doneOut.show()
         doneOut.title = "Done"
         doneOut.tintColor = .white
-       editModeOut.hide()
+        editModeOut.hide()
      }
     }
     
